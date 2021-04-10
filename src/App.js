@@ -33,10 +33,11 @@ export default class App extends React.Component {
     console.log(this.state);
     const {isLoading, movies} = this.state;
     return <section className="container">
-      {isLoading ?
+      {isLoading ? (
         <div className="loader">
           <span className="loader_text">Loading...</span>
-        </div> :
+        </div>
+      ) : (
         <div className="movies">
           {movies.map(movie =>
             <Movie
@@ -50,7 +51,7 @@ export default class App extends React.Component {
             />
           )}
         </div>
-      }
+      )}
     </section>
   }
 
